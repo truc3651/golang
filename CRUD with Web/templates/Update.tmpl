@@ -1,0 +1,18 @@
+{{ define "Update" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+<br>
+<h1>Update</h1>
+    <br>
+    <br>
+  <form method="post" action="/alter">
+    Ten SP: <input type="text" name="TenSanPham" placeholder="TenSanPham" value="{{ .TenSanPham }}" autofocus readonly>
+    <br>
+    <br>
+    Gia: <input type="text" name="Gia" value="{{ .Gia }}" placeholder="Gia"/>
+    <br>
+    <br>
+    <input type="submit" value="Update"/>
+   </form>
+{{ template "Footer" }}
+{{ end }}

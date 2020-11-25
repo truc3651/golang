@@ -1,0 +1,28 @@
+{{ define "Home" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> san pham </h2>
+    <table border="1">
+      <thead>
+      <tr>
+        <td>TenSanPham</td>
+        <td>Gia</td>
+        <td>View</td>
+        <td>Update</td>
+        <td>Delete</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td>{{ .TenSanPham }}</td>
+        <td> {{ .Gia }} </td>
+        <td><a href="/view?id={{ .TenSanPham }} ">View</a></td>
+        <td><a href="/update?id={{ .TenSanPham }} ">Update</a></td>
+        <td><a href="/delete?id={{ .TenSanPham }} " onclick="return confirm('Are you sure you want to delete ?');">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}
